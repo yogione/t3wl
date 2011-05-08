@@ -1,0 +1,14 @@
+
+
+
+rails g scaffold Item name:string description:string
+
+rails g scaffold Store location:string zip:integer item_id:integer price:float
+
+rails generate migration add_photo_to_items photo_file_name:string photo_content_type:string photo_file_size:integer photo_updated_at:datetime
+
+rails g model HomeTable item_id:integer store1_price:float store2_price:float store3_price:float
+
+
+rails g migration add_times_to_receivers time_zone:string breakfast_time:string lunch_time:string snack_time:string dinner_time:string
+

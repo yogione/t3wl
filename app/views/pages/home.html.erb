@@ -1,0 +1,106 @@
+<h2>Send daily automatic text messages to help with weight loss</h2>
+<div class="wrapper">
+  <h2 style="color: #ff0000"><%= params['msg'] %></h2>
+  <h4>Setup is as easy as 1 - 2 - 3</h4>
+  <% form_for :receiver, :url => save_receiver_data_url do |f| %>
+  <%= f.error_messages %>
+    <p>
+      1.  Phone Number <%=f.text_field :phone_number %>
+      and Name: <%=f.text_field :name %><br/>
+      2. Select Time Zone: <%=time_zone_select( "receiver", "time_zone", ActiveSupport::TimeZone.us_zones, :default => "Pacific Time (US & Canada)") %> <br/>
+      3. Choose messages and times
+    </p>
+    <%= "Select Your Relevant Messages" %>
+    <table class="hovertable">
+      <tr>
+        <th>
+          Select
+        </th>
+        <th>
+          Message Text
+          <%=f.select 'breakfast_time' , Message::BREAKFAST,{:prompt => 'Select Breakfast Time'} %>
+        </th>
+      </tr>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Breakfast']) %>
+        <tr>
+          <td>
+            <%= check_box_tag 'messages[]',message.id %>
+          </td>
+          <td>
+            <%= message.msg_text %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br/>
+    <table class="hovertable">
+      <tr>
+        <th>
+          Select
+        </th>
+        <th>
+          Message Text
+          <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Select Lunch Time'} %>
+        </th>
+      </tr>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Lunch']) %>
+        <tr>
+          <td>
+            <%= check_box_tag 'messages[]',message.id %>
+          </td>
+          <td>
+            <%= message.msg_text %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br/>
+    <table class="hovertable">
+      <tr>
+        <th>
+          Select
+        </th>
+        <th>
+          Message Text
+          <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Select Snacks Time'} %>
+        </th>
+      </tr>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Snack']) %>
+        <tr>
+          <td>
+            <%= check_box_tag 'messages[]',message.id %>
+          </td>
+          <td>
+            <%= message.msg_text %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br/>
+    <table class="hovertable">
+      <tr>
+        <th>
+          Select
+        </th>
+        <th>
+          Message Text
+          <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Select Dinner Time'} %>
+        </th>
+      </tr>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Dinner']) %>
+        <tr>
+          <td>
+            <%= check_box_tag 'messages[]',message.id %>
+          </td>
+          <td>
+            <%= message.msg_text %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
+  <% end %>
+</div>
+
+
+
