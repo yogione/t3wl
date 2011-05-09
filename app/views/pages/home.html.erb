@@ -1,8 +1,8 @@
 <h2>Send daily automatic text messages to help with weight loss</h2>
-<div class="wrapper">
+<div class="grid_12">
   <h2 style="color: #ff0000"><%= params['msg'] %></h2>
   <h4>Setup is as easy as 1 - 2 - 3</h4>
-  <% form_for :receiver, :url => save_receiver_data_url do |f| %>
+  <%= form_for :receiver, :url => save_receiver_data_url do |f| %>
   <%= f.error_messages %>
     <p>
       1.  Phone Number <%=f.text_field :phone_number %>
@@ -10,7 +10,8 @@
       2. Select Time Zone: <%=time_zone_select( "receiver", "time_zone", ActiveSupport::TimeZone.us_zones, :default => "Pacific Time (US & Canada)") %> <br/>
       3. Choose messages and times
     </p>
-    <%= "Select Your Relevant Messages" %>
+    </div> <!-- grid_12 -->
+    <div id="breakfastdiv" class="grid_4">
     <table class="hovertable">
       <tr>
         <th>
@@ -32,8 +33,10 @@
         </tr>
       <% end %>
     </table>
+    </div> <!-- breakfast grid -->
     <br/>
-    <table class="hovertable">
+    <div id="lunchdiv" class="grid_4">
+    <table>
       <tr>
         <th>
           Select
@@ -43,6 +46,8 @@
           <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Select Lunch Time'} %>
         </th>
       </tr>
+    </table>
+    <table>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Lunch']) %>
         <tr>
           <td>
@@ -54,7 +59,9 @@
         </tr>
       <% end %>
     </table>
+    </div> <!-- lunch grid -->
     <br/>
+    <div id="snackdiv" class="grid_4">
     <table class="hovertable">
       <tr>
         <th>
@@ -65,7 +72,9 @@
           <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Select Snacks Time'} %>
         </th>
       </tr>
+    </table>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Snack']) %>
+      <table>
         <tr>
           <td>
             <%= check_box_tag 'messages[]',message.id %>
@@ -87,6 +96,8 @@
           <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Select Dinner Time'} %>
         </th>
       </tr>
+    </table>
+    <table>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Dinner']) %>
         <tr>
           <td>
@@ -98,6 +109,7 @@
         </tr>
       <% end %>
     </table>
+    </div> <!-- snack and dinner grid -->
     <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
   <% end %>
 </div>
