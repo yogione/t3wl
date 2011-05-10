@@ -11,9 +11,8 @@
      <%= link_to image_tag("t2wl_logo.gif",:style =>"width:100%;", :alt =>"milkeggs"), root_path %>
     <div id="container" class="container_12">
       <%= render 'layouts/header' %>
-      <div class="grid_12">
-           <ul id="nav">
-             <p class="welcome">
+        <ul id="nav">
+             <p>
                            <li><%= link_to "Users", users_path %></li>
               <% if signed_in? %>
                   <% if false%>
@@ -24,11 +23,9 @@
                   <% end %>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <% end %>
-            
-            </p>
+          </p>
           </ul>
         </nav>
-        </div> <!--nav div-->   
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>

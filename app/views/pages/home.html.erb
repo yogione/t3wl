@@ -1,5 +1,5 @@
-<h2>Send daily automatic text messages to help with weight loss</h2>
 <div class="grid_12">
+  <h2>Send daily automatic text messages to help with weight loss</h2>
   <h2 style="color: #ff0000"><%= params['msg'] %></h2>
   <h4>Setup is as easy as 1 - 2 - 3</h4>
   <%= form_for :receiver, :url => save_receiver_data_url do |f| %>
@@ -12,7 +12,7 @@
     </p>
     </div> <!-- grid_12 -->
     <div id="breakfastdiv" class="grid_4">
-    <table class="hovertable">
+    <table>
       <tr>
         <th>
           Select
@@ -62,7 +62,7 @@
     </div> <!-- lunch grid -->
     <br/>
     <div id="snackdiv" class="grid_4">
-    <table class="hovertable">
+    <table>
       <tr>
         <th>
           Select
@@ -110,8 +110,11 @@
       <% end %>
     </table>
     </div> <!-- snack and dinner grid -->
-    <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
-  <% end %>
+     <% end %>
+    <div class="grid_12">
+      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button round"%>
+    </div> 
+     
 </div>
 
 

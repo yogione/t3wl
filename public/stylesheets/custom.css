@@ -1,11 +1,23 @@
 #breakfastdiv {
-background-color: greenyellow;
+background: greenyellow url(/images/littlegirl4.jpeg) bottom repeat-x;
+moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
 } 
 #lunchdiv {
-background-color: cyan;
+background: cyan url(/images/littlegirl4.jpeg) bottom repeat-x;
+moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
 } 
 #snackdiv {
 background-color: mediumspringgreen;
+moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
 } 
 
 /* Header-nav */
