@@ -54,7 +54,7 @@ class PagesController < ApplicationController
 
   
   def save_receiver_data
-    unless params[:receiver].blank?
+    #unless params[:receiver].blank?
       @receiver = Receiver.new(params[:receiver])
       @receiver.messages << Message.find(params[:messages]) unless params[:messages].blank?
       @receiver.save
@@ -65,7 +65,7 @@ class PagesController < ApplicationController
         flash[:notice] = 'Not Saved'
         render :action => :home
       end
-    end
+      # end
   end
 
   def contact

@@ -18,7 +18,7 @@
           Select
         </th>
         <th>
-          Message Text
+          Breakfast Message Text
           <%=f.select 'breakfast_time' , Message::BREAKFAST,{:prompt => 'Select Breakfast Time'} %>
         </th>
       </tr>
@@ -42,7 +42,7 @@
           Select
         </th>
         <th>
-          Message Text
+          Lunch Message Text
           <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Select Lunch Time'} %>
         </th>
       </tr>
@@ -68,7 +68,7 @@
           Select
         </th>
         <th>
-          Message Text
+          Snack Message
           <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Select Snacks Time'} %>
         </th>
       </tr>
@@ -92,7 +92,7 @@
           Select
         </th>
         <th>
-          Message Text
+          Dinner Message
           <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Select Dinner Time'} %>
         </th>
       </tr>
@@ -110,11 +110,9 @@
       <% end %>
     </table>
     </div> <!-- snack and dinner grid -->
-     <% end %>
-    <div class="grid_12">
-      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button round"%>
+      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
     </div> 
-     
+      <% end %>
 </div>
 
 
