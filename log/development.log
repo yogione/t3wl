@@ -15841,3 +15841,26 @@ Rendered layouts/_header.html.erb (178.8ms)
 Rendered layouts/_footer.html.erb (3.5ms)
 Rendered pages/home.html.erb within layouts/application (2151.4ms)
 Completed 200 OK in 3102ms (Views: 2197.2ms | ActiveRecord: 564.6ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-16 18:14:56 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (344.9ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (31.6ms)[0m  SHOW TABLES
+  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (2.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (2.2ms)
+  [1m[35mUser Load (129.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (335.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.9ms)
+Rendered pages/home.html.erb within layouts/application (2358.5ms)
+Completed 200 OK in 3112ms (Views: 2254.9ms | ActiveRecord: 511.9ms)

@@ -1,12 +1,12 @@
 #breakfastdiv {
-background: greenyellow url(/images/littlegirl4.jpeg) repeat-y;
+  background: greenyellow; /* url(/images/littlegirl4.jpeg) repeat-y; */
 moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
 } 
 #lunchdiv {
-background: cyan url(/images/littlegirl4.jpeg) bottom repeat-x;
+background: cyan;
 moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
