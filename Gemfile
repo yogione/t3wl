@@ -4,16 +4,16 @@ gem 'rails', '3.0.4'
 gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.pre2'
 gem 'jquery-rails', '>=0.2.6'
-gem 'mysql2'
+gem 'mysql2', '=0.2.6'
 gem 'unicorn'
 gem 'capistrano'
 gem 'ruby-debug19'
-gem 'web-app-theme', '>=0.6.2'
+#gem 'web-app-theme', '>=0.6.2'
 #gem 'fancy-buttons'
 gem 'capistrano-ext', :require => 'capistrano'
 gem 'formtastic'
 gem "paperclip", "~> 2.3"
-gem 'geo_location'
+#gem 'geo_location'
 
 
 group :development do
