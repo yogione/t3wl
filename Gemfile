@@ -13,7 +13,7 @@ gem 'ruby-debug19'
 gem 'capistrano-ext', :require => 'capistrano'
 gem 'formtastic'
 gem "paperclip", "~> 2.3"
-#gem 'geo_location'
+gem 'geo_location'
 
 
 group :development do
