@@ -1,4 +1,10 @@
+default times - 7 am, 11 am, 2 pm, 5 pm
+add a blog
+select one message  by default
+suggest messages
+go to signin sheet after the green button is pressed
 
+rotilady.com
 
 
 rails g scaffold Item name:string description:string
