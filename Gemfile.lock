@@ -35,8 +35,8 @@ GEM
     capistrano (2.5.20)
       highline
       highline
-      net-scp
       net-scp (>= 1.0.0)
+      net-scp
       net-sftp
       net-sftp (>= 2.0.0)
       net-ssh
@@ -74,7 +74,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.7)
+    mysql2 (0.2.6)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -134,7 +134,6 @@ GEM
     unicorn (3.5.0)
       kgio (~> 2.3)
       rack
-    web-app-theme (0.6.3)
     webrat (0.7.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -154,7 +153,7 @@ DEPENDENCIES
   geo_location
   gravatar_image_tag (= 0.1.0)
   jquery-rails (>= 0.2.6)
-  mysql2
+  mysql2 (= 0.2.6)
   paperclip (~> 2.3)
   rails (= 3.0.4)
   rspec (= 2.1.0)
@@ -162,6 +161,5 @@ DEPENDENCIES
   ruby-debug19
   spork (= 0.8.4)
   unicorn
-  web-app-theme (>= 0.6.2)
   webrat (= 0.7.1)
   will_paginate (= 3.0.pre2)

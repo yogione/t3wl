@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       #UserMailer.new_account_notification(@user).deliver
-      redirect_to @user, :flash => { :success => "Welcome to the Autoworker community!" }
+      redirect_to @user, :flash => { :success => "Welcome to the weightloss tool!" }
     else
       @title = "Sign up"
       render 'new'

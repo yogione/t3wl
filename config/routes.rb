@@ -33,12 +33,12 @@ SampleApp::Application.routes.draw do
 #    end
 #  end
   
-#  resources :sessions,      :only => [:new, :create, :destroy] do
-#    collection do
-#      get :forgot_password, :new_password, :update_reset_password
-#      post :send_reset_password, :reset_new_password
-#    end
-#  end
+  resources :sessions,      :only => [:new, :create, :destroy] do
+    collection do
+      get :forgot_password, :new_password, :update_reset_password
+      post :send_reset_password, :reset_new_password
+    end
+  end
   #  resources :microposts,    :only => [:create, :destroy]
   #resources :stories,    :only => [:create, :destroy, :show]
   resources :comments,    :only => [:create, :destroy, :new, :show]

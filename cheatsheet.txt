@@ -1,6 +1,6 @@
 default times - 7 am, 11 am, 2 pm, 5 pm
 add a blog
-select one message  by default
+select one message by default in each category
 suggest messages
 go to signin sheet after the green button is pressed
 
