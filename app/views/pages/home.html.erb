@@ -1,7 +1,7 @@
 <div class="grid_12">
-  <h2>Send daily automatic text messages to help with weight loss</h2>
+  <h2>Send daily <strong>automatic</strong> text messages to help with weight loss</h2>
   <h2 style="color: #ff0000"><%= params['msg'] %></h2>
-  <h4>Setup is as easy as 1 - 2 - 3</h4>
+  <h4><strong>One Time</strong> Setup is as easy as 1 - 2 - 3</h4>
   <%= form_for :receiver, :url => save_receiver_data_url do |f| %>
   <%= f.error_messages %>
     <p>
@@ -19,7 +19,7 @@
         </th>
         <th>
           Breakfast Message Text
-          <%=f.select 'breakfast_time' , Message::BREAKFAST,{:prompt => 'Select Breakfast Time'} %>
+          <%=f.select 'breakfast_time' , Message::BREAKFAST,{:prompt => 'Breakfast @7 AM or Change'} %>
         </th>
       </tr>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Breakfast']) %>
@@ -43,7 +43,7 @@
         </th>
         <th>
           Lunch Message Text
-          <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Select Lunch Time'} %>
+          <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Lunch @11 AM or Change'} %>
         </th>
       </tr>
     </table>
@@ -69,7 +69,7 @@
         </th>
         <th>
           Snack Message
-          <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Select Snacks Time'} %>
+          <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Snack @2 PM or Change'} %>
         </th>
       </tr>
     </table>
@@ -93,7 +93,7 @@
         </th>
         <th>
           Dinner Message
-          <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Select Dinner Time'} %>
+          <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Dinner @5 PM or Change'} %>
         </th>
       </tr>
     </table>

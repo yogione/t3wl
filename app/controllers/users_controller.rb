@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
    # @microposts = @user.microposts.paginate(:page => params[:page])
-    @stories = @user.stories.paginate(:page => params[:page])
+    #@stories = @user.stories.paginate(:page => params[:page])
     @title = @user.name
   end
 
@@ -39,7 +39,8 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       #UserMailer.new_account_notification(@user).deliver
-      redirect_to @user, :flash => { :success => "Welcome to the weightloss tool!" }
+      redirect_to root_path :flash => { :success => "Welcome to the weightloss tool!" }
+     # redirect_to @user, :flash => { :success => "Welcome to the weightloss tool!" }
     else
       @title = "Sign up"
       render 'new'

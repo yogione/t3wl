@@ -16275,3 +16275,476 @@ NoMethodError (undefined method `salt=' for #<User:0x97f7020>):
 Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
 Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
 Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 18:44:27 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (441.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (14.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (19.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (4.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (474.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (3.5ms)
+Rendered pages/home.html.erb within layouts/application (737.9ms)
+Completed 200 OK in 1476ms (Views: 789.1ms | ActiveRecord: 477.3ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:18:29 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (43.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (3.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (280.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (408.5ms)
+Completed 200 OK in 659ms (Views: 463.8ms | ActiveRecord: 48.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:26:06 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (44.2ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (137.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (205.4ms)
+Completed 200 OK in 382ms (Views: 221.9ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:27:45 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (1.2ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (4.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (133.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (220.1ms)
+Completed 200 OK in 443ms (Views: 227.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:28:18 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.8ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (47.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (120.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (194.4ms)
+Completed 200 OK in 358ms (Views: 212.3ms | ActiveRecord: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:31:15 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (27.7ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (53.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (3.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (151.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.6ms)
+Rendered pages/home.html.erb within layouts/application (251.5ms)
+Completed 200 OK in 403ms (Views: 269.0ms | ActiveRecord: 83.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 19:34:31 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.7ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (75.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.8ms)
+Rendered pages/home.html.erb within layouts/application (132.8ms)
+Completed 200 OK in 247ms (Views: 141.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-02 19:37:44 -0400
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "receiver"=>{"phone_number"=>"7346747560", "name"=>"jim", "time_zone"=>"Pacific Time (US & Canada)", "breakfast_time"=>"6:30 AM", "lunch_time"=>"11:30 AM", "snack_time"=>"2:30 PM", "dinner_time"=>"5:00 PM"}, "messages"=>["1", "7", "14", "15", "16"], "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[35mSQL (0.9ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (482.7ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`id` IN (1, 7, 14, 15, 16)
+  [1m[36mSQL (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (42.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  describe `receivers`
+  [1m[36mAREL (165.8ms)[0m  [1mINSERT INTO `receivers` (`name`, `phone_number`, `description`, `email`, `status`, `created_at`, `updated_at`, `time_zone`, `breakfast_time`, `lunch_time`, `snack_time`, `dinner_time`) VALUES ('jim', 7346747560, NULL, NULL, NULL, '2011-06-02 23:37:44', '2011-06-02 23:37:44', 'Pacific Time (US & Canada)', '6:30 AM', '11:30 AM', '2:30 PM', '5:00 PM')[0m
+  [1m[35mSQL (26.2ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (23, 1)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (23, 7)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (23, 14)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (23, 15)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (23, 16)
+  [1m[36mSQL (62.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Redirected to http://127.0.0.1:3000/signup
+Completed 302 Found in 1033ms
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-02 19:37:45 -0400
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (1.1ms)
+Rendered users/_fields.html.erb (5.0ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (4.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (2.3ms)
+Rendered users/new.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 152ms (Views: 100.1ms | ActiveRecord: 786.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-02 19:38:14 -0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "user"=>{"name"=>"lisa", "email"=>"lisa@aw.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('lisa@aw.com')) LIMIT 1
+  [1m[36mSQL (24.1ms)[0m  [1mROLLBACK[0m
+Completed   in 150ms
+
+NoMethodError (undefined method `salt=' for #<User:0x9823c74>):
+  app/models/user.rb:83:in `encrypt_password'
+  app/controllers/users_controller.rb:39:in `create'
+
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.7ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.4ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+  [1m[36mSQL (40.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (20.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to CreateReceivers (20110330235415)
+Migrating to CreateMessages (20110330235723)
+Migrating to CreateMessagesReceivers (20110330235801)
+Migrating to AddTimesToReceivers (20110423000808)
+Migrating to AddSaltToUsers (20110603001011)
+  [1m[35mSQL (427.2ms)[0m  ALTER TABLE `users` ADD `salt` varchar(255)
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110603001011')[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (6.6ms)[0m  SHOW KEYS FROM `messages`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `messages_receivers`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `receivers`[0m
+  [1m[35mSQL (18.5ms)[0m  SHOW KEYS FROM `receivers`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 20:11:15 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (13.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (149.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (2180.8ms)
+Completed 200 OK in 2420ms (Views: 2175.4ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-02 20:12:02 -0400
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "receiver"=>{"phone_number"=>"7346747560", "name"=>"jim", "time_zone"=>"Pacific Time (US & Canada)", "breakfast_time"=>"6:30 AM", "lunch_time"=>"12:00 NOON", "snack_time"=>"3:00 PM", "dinner_time"=>"5:30 PM"}, "messages"=>["1", "7", "14", "16"], "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[35mSQL (1.0ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.7ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`id` IN (1, 7, 14, 16)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  describe `receivers`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `receivers` (`name`, `phone_number`, `description`, `email`, `status`, `created_at`, `updated_at`, `time_zone`, `breakfast_time`, `lunch_time`, `snack_time`, `dinner_time`) VALUES ('jim', 7346747560, NULL, NULL, NULL, '2011-06-03 00:12:03', '2011-06-03 00:12:03', 'Pacific Time (US & Canada)', '6:30 AM', '12:00 NOON', '3:00 PM', '5:30 PM')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (24, 1)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (24, 7)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (24, 14)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (24, 16)[0m
+  [1m[35mSQL (19.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/signup
+Completed 302 Found in 318ms
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-02 20:12:03 -0400
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (1.0ms)
+Rendered users/_fields.html.erb (4.3ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (5.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered users/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 93ms (Views: 43.8ms | ActiveRecord: 27.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-02 20:12:20 -0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "user"=>{"name"=>"lisa", "email"=>"lisa@aw.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('lisa@aw.com')) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+Completed   in 241ms
+
+NoMethodError (undefined method `encrypted_password=' for #<User:0x84ccb1c>):
+  app/models/user.rb:84:in `encrypt_password'
+  app/controllers/users_controller.rb:39:in `create'
+
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.6ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.6ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (42.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to CreateReceivers (20110330235415)
+Migrating to CreateMessages (20110330235723)
+Migrating to CreateMessagesReceivers (20110330235801)
+Migrating to AddTimesToReceivers (20110423000808)
+Migrating to AddSaltToUsers (20110603001011)
+Migrating to AddPasswordToUsers (20110603001531)
+  [1m[35mSQL (45.5ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255)
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110603001531')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (4.8ms)[0m  SHOW KEYS FROM `messages`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `messages_receivers`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `receivers`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `receivers`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/srini/code/ruby/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/srini/code/ruby/t3wl/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-02 20:16:25 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (116.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (1491.3ms)
+Completed 200 OK in 1624ms (Views: 1547.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-02 20:17:18 -0400
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "receiver"=>{"phone_number"=>"7346747560", "name"=>"jim", "time_zone"=>"Pacific Time (US & Canada)", "breakfast_time"=>"7:00 AM", "lunch_time"=>"11:30 AM", "snack_time"=>"2:00 PM", "dinner_time"=>"5:00 PM"}, "messages"=>["1", "7", "14", "16"], "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[35mSQL (0.7ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`id` IN (1, 7, 14, 16)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  describe `receivers`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `receivers` (`name`, `phone_number`, `description`, `email`, `status`, `created_at`, `updated_at`, `time_zone`, `breakfast_time`, `lunch_time`, `snack_time`, `dinner_time`) VALUES ('jim', 7346747560, NULL, NULL, NULL, '2011-06-03 00:17:18', '2011-06-03 00:17:18', 'Pacific Time (US & Canada)', '7:00 AM', '11:30 AM', '2:00 PM', '5:00 PM')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (25, 1)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (25, 7)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (25, 14)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (25, 16)[0m
+  [1m[35mSQL (2.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/signup
+Completed 302 Found in 186ms
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-02 20:17:18 -0400
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (1.0ms)
+Rendered users/_fields.html.erb (4.2ms)
+Rendered layouts/_stylesheets.html.erb (2.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (4.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered users/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 96ms (Views: 44.9ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-02 20:17:35 -0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "user"=>{"name"=>"lisa", "email"=>"lisa@aw.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('lisa@aw.com')) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  describe `users`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `salt`, `encrypted_password`) VALUES ('lisa', 'lisa@aw.com', '2011-06-03 00:17:35', '2011-06-03 00:17:35', '283888638b981b03d8a5bc27b619a7620e976c125289bbd53ef7ce87581ccb63', 'cd1529b83da6812d13e31451f3a348f070daba9df3830ee43ca142f9bfb26fb0')[0m
+  [1m[35mSQL (48.6ms)[0m  COMMIT
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 178ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-06-02 20:17:35 -0400
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed   in 68ms
+
+NameError (uninitialized constant User::Story):
+  app/controllers/users_controller.rb:14:in `show'
+
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+Rendered /home/srini/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-02 20:25:43 -0400
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (1.0ms)
+Rendered users/_fields.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (5.0ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered users/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 175ms (Views: 45.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-02 20:26:00 -0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "user"=>{"name"=>"lisa", "email"=>"lisa@aw.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('lisa@aw.com')) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered shared/_error_messages.html.erb (3.2ms)
+Rendered users/_fields.html.erb (4.5ms)
+Rendered layouts/_stylesheets.html.erb (4.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (6.1ms)
+Rendered layouts/_footer.html.erb (2.5ms)
+Rendered users/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 178ms (Views: 54.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-02 20:26:12 -0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3B9yaL4saDgFNPLtysLsfYUjW6ypd8NczapVrkC3YGQ=", "user"=>{"name"=>"lisa", "email"=>"lisa@aw1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('lisa@aw1.com')) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `salt`, `encrypted_password`) VALUES ('lisa', 'lisa@aw1.com', '2011-06-03 00:26:13', '2011-06-03 00:26:13', '85a8034a10713d8437a6736b3295cf646926b31a6288ec818c1db7640ce76929', 'f1909f8082606bb8f4a06b8d872d6bc3f5ea09a612122c9f9d0ddd978d12a1b3')
+  [1m[36mSQL (3.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/?flash[success]=Welcome+to+the+weightloss+tool%21
+Completed 302 Found in 73ms
+
+
+Started GET "/?flash[success]=Welcome+to+the+weightloss+tool%21" for 127.0.0.1 at 2011-06-02 20:26:13 -0400
+  Processing by PagesController#home as HTML
+  Parameters: {"flash"=>{"success"=>"Welcome to the weightloss tool!"}}
+  [1m[35mSQL (0.7ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered layouts/_header.html.erb (69.6ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (122.6ms)
+Completed 200 OK in 175ms (Views: 130.1ms | ActiveRecord: 7.8ms)
