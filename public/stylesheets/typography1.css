@@ -85,6 +85,11 @@ input.button, button, input[submit], input[button] {
 .col1 textarea {
   width: 478px;
 }
+.big_checkbox {
+  height: 32px;
+  width: 32px;
+  /*  padding: 3px 12px; */
+}
 
 /* Tables
 -------------------------------------------------------------- */
