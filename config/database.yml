@@ -7,13 +7,13 @@
 #  timeout: 5000
 
 development:
-  adapter: mysql2
+  adapter: mysql
   encoding: utf8
   reconnect: false
   database: t2wl
   pool: 5
-  username: t2wl
-  password: 
+  username: root
+  password: root
   socket: /var/run/mysqld/mysqld.sock
 
  # development:

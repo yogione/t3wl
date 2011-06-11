@@ -16902,3 +16902,1114 @@ Rendered layouts/_header.html.erb (1.9ms)
 Rendered layouts/_footer.html.erb (1.3ms)
 Rendered users/edit.html.erb within layouts/application (31.0ms)
 Completed 200 OK in 151ms (Views: 83.6ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/raghu/netbeans/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/raghu/netbeans/t3wl/config/environment.rb:5)
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (139.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (200.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20100821203213)
+  [1m[35mSQL (121.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (65.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20100821203213')[0m
+Migrating to CreateReceivers (20110330235415)
+  [1m[35mSQL (121.0ms)[0m  CREATE TABLE `receivers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `phone_number` int(11), `description` varchar(255), `email` varchar(255), `status` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (41.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110330235415')[0m
+Migrating to CreateMessages (20110330235723)
+  [1m[35mSQL (137.6ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `msg_text` varchar(255), `category` varchar(255), `msg_time` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (65.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110330235723')[0m
+Migrating to CreateMessagesReceivers (20110330235801)
+  [1m[35mSQL (138.9ms)[0m  CREATE TABLE `messages_receivers` (`receiver_id` int(11), `message_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (49.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110330235801')[0m
+Migrating to AddTimesToReceivers (20110423000808)
+  [1m[35mSQL (241.0ms)[0m  ALTER TABLE `receivers` ADD `time_zone` varchar(255)
+  [1m[36mSQL (251.3ms)[0m  [1mALTER TABLE `receivers` ADD `breakfast_time` varchar(255)[0m
+  [1m[35mSQL (217.5ms)[0m  ALTER TABLE `receivers` ADD `lunch_time` varchar(255)
+  [1m[36mSQL (250.8ms)[0m  [1mALTER TABLE `receivers` ADD `snack_time` varchar(255)[0m
+  [1m[35mSQL (217.7ms)[0m  ALTER TABLE `receivers` ADD `dinner_time` varchar(255)
+  [1m[36mSQL (40.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110423000808')[0m
+Migrating to AddSaltToUsers (20110603001011)
+  [1m[35mSQL (257.2ms)[0m  ALTER TABLE `users` ADD `salt` varchar(255)
+  [1m[36mSQL (40.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110603001011')[0m
+Migrating to AddPasswordToUsers (20110603001531)
+  [1m[35mSQL (247.8ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255)
+  [1m[36mSQL (32.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110603001531')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `messages`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `messages_receivers`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `receivers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `receivers`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/raghu/netbeans/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/raghu/netbeans/t3wl/config/environment.rb:5)
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Mom, no donut for breakfast', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (43.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Dad, no poptart for breakfast', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (64.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Mom - Looking good', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (48.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('I love you daddy', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (48.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Dad, no big texas roll for breakfast', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (48.4ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Dad, I will make the Oatmeal for you', 'Breakfast', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (39.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no McDonalds for lunch', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (40.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no pizza for lunch', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (31.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('How about salad for lunch, skip the dressing', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (31.8ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Chinese food is deepfried poision', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (31.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Sub sandwich with no dressing is good', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (31.6ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('I love you Mom', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('Looking good honey', 'Lunch', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (31.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no donut', 'Snack', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (31.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no pizza', 'Snack', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (31.7ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no fried chicken for dinner', 'Dinner', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no pizza for dinner', 'Dinner', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')[0m
+  [1m[35mSQL (31.8ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('How about Rotisserie chicken for dinner', 'Dinner', '2011-06-11 11:21:06', '2011-06-11 05:51:06', '2011-06-11 05:51:06')
+  [1m[36mSQL (40.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `messages` (`msg_text`, `category`, `msg_time`, `created_at`, `updated_at`) VALUES ('no pizza for dinner', 'Dinner', '2011-06-11 11:21:07', '2011-06-11 05:51:07', '2011-06-11 05:51:07')[0m
+  [1m[35mSQL (31.7ms)[0m  COMMIT
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /home/raghu/netbeans/t3wl/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /home/raghu/netbeans/t3wl/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 11:22:22 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (128.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (1071.2ms)
+Completed 200 OK in 1140ms (Views: 1087.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 11:25:50 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (70.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 130ms (Views: 105.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 11:26:45 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (36.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (104.5ms)
+Completed 200 OK in 134ms (Views: 109.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 11:26:57 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 95ms (Views: 68.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 11:27:05 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (68.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 129ms (Views: 104.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-11 12:34:19 +0530
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9e6KFFN4ALGxj5qPBWdeR5YlrHZDQsGnICn8csUUuw=", "receiver"=>{"phone_number"=>"11111111111111", "name"=>"swapna", "time_zone"=>"Pacific Time (US & Canada)", "breakfast_time"=>"", "lunch_time"=>"", "snack_time"=>"", "dinner_time"=>""}, "breakfast"=>{"message"=>"all is well", "time"=>"8:00"}, "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 152ms (Views: 81.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/save_receiver_data" for 127.0.0.1 at 2011-06-11 12:37:15 +0530
+  Processing by PagesController#save_receiver_data as HTML
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (111.1ms)
+Completed 200 OK in 150ms (Views: 115.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:38:34 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (32.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (63.6ms)
+Completed 200 OK in 130ms (Views: 68.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:38:49 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (38.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 107ms (Views: 78.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:49:43 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (71.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (102.4ms)
+Completed 200 OK in 133ms (Views: 107.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:50:11 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (34.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 134ms (Views: 108.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:50:52 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (64.4ms)
+Completed 200 OK in 96ms (Views: 69.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:51:44 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (71.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (103.1ms)
+Completed 200 OK in 133ms (Views: 108.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:51:49 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 131ms (Views: 70.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:52:18 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (35.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 97ms (Views: 72.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:52:55 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (70.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (102.3ms)
+Completed 200 OK in 133ms (Views: 107.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:53:19 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (34.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (101.5ms)
+Completed 200 OK in 131ms (Views: 106.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:53:29 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (38.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 109ms (Views: 75.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:53:39 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (78.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (110.4ms)
+Completed 200 OK in 141ms (Views: 115.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 12:54:25 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (33.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 132ms (Views: 107.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-11 12:55:38 +0530
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9e6KFFN4ALGxj5qPBWdeR5YlrHZDQsGnICn8csUUuw=", "receiver"=>{"phone_number"=>"11111111111111", "name"=>"swapna", "time_zone"=>"Mountain Time (US & Canada)", "breakfast_message"=>"qqqqqqqqqqqqqqqqq", "breakfast_time"=>"", "lunch_message"=>"", "lunch_time"=>"", "snack_message"=>"", "snack_time"=>"", "dinner_message"=>"", "dinner_time"=>""}, "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+Completed   in 21ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: breakfast_message):
+  app/controllers/pages_controller.rb:57:in `new'
+  app/controllers/pages_controller.rb:57:in `save_receiver_data'
+
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:31:34 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (77.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (34.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (127.8ms)
+Completed 200 OK in 253ms (Views: 151.2ms | ActiveRecord: 78.5ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-11 13:32:16 +0530
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9e6KFFN4ALGxj5qPBWdeR5YlrHZDQsGnICn8csUUuw=", "receiver"=>{"phone_number"=>"11111111111111", "name"=>"swapna", "time_zone"=>"Chihuahua", "breakfast_time"=>"", "lunch_time"=>"", "snack_time"=>"", "dinner_time"=>""}, "messages"=>{"breakfast"=>"aaaaaaaaaaaa", "lunch"=>"aaaaaaaaaaaaaaawww", "snack"=>"ssssssssssssssssssssss", "dinner"=>"mamamamama"}, "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+Completed   in 280ms
+
+ArgumentError (Unknown key(s): breakfast, lunch, snack, dinner):
+  app/controllers/pages_controller.rb:59:in `save_receiver_data'
+
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:37:04 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (33.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (101.6ms)
+Completed 200 OK in 132ms (Views: 106.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:37:34 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (3.2ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (32.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 133ms (Views: 69.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:38:09 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (69.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 131ms (Views: 106.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:38:12 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (43.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (35.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (110.8ms)
+Completed 200 OK in 140ms (Views: 115.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:38:16 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (33.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (62.9ms)
+Completed 200 OK in 127ms (Views: 67.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:38:38 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (67.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 126ms (Views: 102.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:39:22 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (1.0ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.8ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (40.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (115.0ms)
+Completed 200 OK in 148ms (Views: 119.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:39:48 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (33.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 96ms (Views: 69.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:40:16 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (67.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 126ms (Views: 102.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:40:31 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (33.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 128ms (Views: 104.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:41:04 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (9.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (39.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (80.2ms)
+Completed 200 OK in 119ms (Views: 85.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 13:41:14 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (110.1ms)
+Completed 200 OK in 140ms (Views: 115.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/save_receiver_data" for 127.0.0.1 at 2011-06-11 13:41:43 +0530
+  Processing by PagesController#save_receiver_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9e6KFFN4ALGxj5qPBWdeR5YlrHZDQsGnICn8csUUuw=", "receiver"=>{"phone_number"=>"11111111111111", "name"=>"swapna", "time_zone"=>"Pacific Time (US & Canada)", "breakfast_time"=>"6:30 AM", "lunch_time"=>"11:00 AM", "snack_time"=>"3:00 PM", "dinner_time"=>"5:30 PM"}, "messages"=>["1", "7", "14", "16"], "commit"=>"Get Started! - 10 days free, then $5/month"}
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (9.8ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`id` IN (1, 7, 14, 16)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `receivers`[0m
+  [1m[35mAREL (17.7ms)[0m  INSERT INTO `receivers` (`name`, `phone_number`, `description`, `email`, `status`, `created_at`, `updated_at`, `time_zone`, `breakfast_time`, `lunch_time`, `snack_time`, `dinner_time`) VALUES ('swapna', 11111111111111, NULL, NULL, NULL, '2011-06-11 08:11:44', '2011-06-11 08:11:44', 'Pacific Time (US & Canada)', '6:30 AM', '11:00 AM', '3:00 PM', '5:30 PM')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (1, 1)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (1, 7)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (1, 14)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `messages_receivers` (`receiver_id`, `message_id`) VALUES (1, 16)
+  [1m[36mSQL (41.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 156ms
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-11 13:41:44 +0530
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered users/_fields.html.erb (2.4ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 58ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-11 13:42:31 +0530
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9e6KFFN4ALGxj5qPBWdeR5YlrHZDQsGnICn8csUUuw=", "user"=>{"name"=>"raghavanedra", "email"=>"raghubetter@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('raghubetter@gmail.com')) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `salt`, `encrypted_password`) VALUES ('raghavanedra', 'raghubetter@gmail.com', '2011-06-11 08:12:31', '2011-06-11 08:12:31', '5a80248700060bc00843592dba09fd33e5d5e378b5c6c69858df58c188d3a0dd', '650df16ab6189db57f03b573c70e440ecff53449c4aae49e9778834e0431f2a1')[0m
+  [1m[35mSQL (58.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/?flash[success]=Welcome+to+the+weightloss+tool%21
+Completed 302 Found in 223ms
+
+
+Started GET "/?flash[success]=Welcome+to+the+weightloss+tool%21" for 127.0.0.1 at 2011-06-11 13:42:32 +0530
+  Processing by PagesController#home as HTML
+  Parameters: {"flash"=>{"success"=>"Welcome to the weightloss tool!"}}
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (39.5ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 137ms (Views: 75.7ms | ActiveRecord: 61.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-06-11 13:59:43 +0530
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered users/_fields.html.erb (2.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (2.3ms)
+Rendered users/edit.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 60ms (Views: 24.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-11 13:59:47 +0530
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (53.7ms)
+Rendered users/index.html.erb within layouts/application (55.7ms)
+Completed   in 97ms
+
+ActionView::Template::Error (undefined method `admin?' for #<User:0xa159744>):
+    1: <li>
+    2:   <%= gravatar_for user, :size => 30 %>
+    3:   <%= link_to current_user.name, current_user %>
+    4:   <% if current_user.admin? %>
+    5:   |
+    6:   <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+    7:                               :title => "Delete #{user.name}" %>
+  app/views/users/_user.html.erb:4:in `_app_views_users__user_html_erb__569191645_84397380_785073479'
+  app/views/users/index.html.erb:6:in `_app_views_users_index_html_erb__852466848_84415040__947924255'
+
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /home/raghu/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-11 14:00:18 +0530
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (2.2ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 89ms (Views: 17.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:00:58 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (38.0ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 132ms (Views: 72.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:02:05 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (75.2ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 136ms (Views: 110.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:02:25 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (76.4ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 135ms (Views: 111.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:02:45 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (44.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (78.7ms)
+Completed 200 OK in 145ms (Views: 83.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:02:58 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.5ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (83.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (114.9ms)
+Completed 200 OK in 144ms (Views: 119.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:03:08 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (38.5ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 136ms (Views: 111.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:03:13 +0530
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Snack')
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered layouts/_header.html.erb (37.6ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 99ms (Views: 72.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-11 14:03:27 +0530
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `messages_receivers`[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'breakfast'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'lunch'[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'snack'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE `messages`.`category` = 'dinner'[0m
+  [1m[35mSQL (0.4ms)[0m  describe `messages_receivers`
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Breakfast')[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Lunch')
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (category = 'Snack')[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT `messages`.* FROM `messages` WHERE (category = 'Dinner')
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (75.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 134ms (Views: 110.0ms | ActiveRecord: 1.4ms)

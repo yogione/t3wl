@@ -54,24 +54,15 @@ class PagesController < ApplicationController
 
   
   def save_receiver_data
-    #unless params[:receiver].blank?
-      @receiver = Receiver.new(params[:receiver])
-      @receiver.messages << Message.find(params[:messages]) unless params[:messages].blank?
-      @receiver.save
-      if @receiver.save
-       # flash[:notice] = 'Saved Successfully - please provide the following info to validate your account'
-      # if signed_in?  
-        #  flash[:notice] = 'thanks. text pages will start soon'
-        #  else
-          redirect_to signup_path
-          # end
-      
-     # redirect_to :controller => :pages, :action => :home
-      else
-        flash[:notice] = 'Not Saved'
-        render :action => :home
-      end
-      # end
+    @receiver = Receiver.new(params[:receiver])
+    @receiver.messages << Message.find(params[:messages])
+    @receiver.save
+    if @receiver.save
+      redirect_to signup_path
+    else
+      flash[:notice] = 'Not Saved'
+      render :action => :home
+    end
   end
 
   def contact
