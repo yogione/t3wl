@@ -4,13 +4,13 @@
   <h4><strong>One Time</strong> Setup is as easy as 1 - 2 - 3</h4>
   <%= form_for :receiver, :url => save_receiver_data_url do |f| %>
   <%= f.error_messages %>
-    <p>
+  <p>
       1.  Phone Number <%=f.text_field :phone_number %>
       and Name: <%=f.text_field :name %><br/>
       2. Select Time Zone: <%=time_zone_select( "receiver", "time_zone", ActiveSupport::TimeZone.us_zones, :default => "Pacific Time (US & Canada)") %> <br/>
       3. Choose messages and times
     </p>
-    </div> <!-- grid_12 -->
+  </div> <!-- grid_12 -->
     <div id="breakfastdiv" class="grid_4">
     <table>
 	<tr>
@@ -18,18 +18,18 @@
 	<td>Time<%=text_field_tag "breakfast[time]" %></td>
 	</tr>
       <tr>
-        <th>
-          Select
-        </th>
-        <th>
-          Breakfast Message Text
+        <td>
+          <%= image_tag("littlegirl4.jpeg", :size=>"50x60")%>
+        </td>
+        <td>
+          <strong>Breakfast Text Message</strong>
           <%=f.select 'breakfast_time' , Message::BREAKFAST,{:prompt => 'Breakfast @7 AM or Change'} %>
-        </th>
+        </td>
       </tr>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Breakfast']) %>
         <tr>
           <td>
-            <%= check_box_tag 'messages[]',message.id %>
+          <%= check_box_tag 'messages[]',message.id %>
           </td>
           <td>
             <%= message.msg_text %>
@@ -42,13 +42,13 @@
     <div id="lunchdiv" class="grid_4">
     <table>
       <tr>
-        <th>
-          Select
-        </th>
-        <th>
-          Lunch Message Text
+        <td>
+          <%= image_tag("littlegirl4.jpeg", :size=>"50x60")%>
+        </td>
+        <td>
+          <strong>Lunch Message Text</strong>
           <%=f.select 'lunch_time' , Message::LUNCH,{:prompt => 'Lunch @11 AM or Change'} %>
-        </th>
+        </td>
       </tr>
     </table>
     <table>
@@ -68,13 +68,13 @@
     <div id="snackdiv" class="grid_4">
     <table>
       <tr>
-        <th>
-          Select
-        </th>
-        <th>
-          Snack Message
+        <td>
+          <%= image_tag("littlegirl4.jpeg", :size=>"50x60")%>
+        </td>
+        <td>
+          <strong>Snack Message</strong>
           <%=f.select 'snack_time' , Message::SNACKS,{:prompt => 'Snack @2 PM or Change'} %>
-        </th>
+        </td>
       </tr>
     </table>
       <% for message in Message.find(:all, :conditions => ["category = ?",'Snack']) %>
@@ -92,13 +92,13 @@
     <br/>
     <table class="hovertable">
       <tr>
-        <th>
-          Select
-        </th>
-        <th>
-          Dinner Message
+       <td>
+          <%= image_tag("littlegirl4.jpeg", :size=>"50x60")%>
+        </td>
+        <td>
+          <strong>Dinner Message</strong>
           <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Dinner @5 PM or Change'} %>
-        </th>
+        </td>
       </tr>
     </table>
     <table>
@@ -114,7 +114,7 @@
       <% end %>
     </table>
     </div> <!-- snack and dinner grid -->
-      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
+      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button round"%>
     </div> 
       <% end %>
 </div>
