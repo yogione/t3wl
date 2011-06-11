@@ -3,22 +3,20 @@
   <h2 style="color: #ff0000"><%= params['msg'] %></h2>
   <h4><strong>One Time</strong> Setup is as easy as 1 - 2 - 3</h4>
   <%= form_for :receiver, :url => save_receiver_data_url do |f| %>
-    <%= f.error_messages %>
+  <%= f.error_messages %>
     <p>
       1.  Phone Number <%=f.text_field :phone_number %>
       and Name: <%=f.text_field :name %><br/>
       2. Select Time Zone: <%=time_zone_select( "receiver", "time_zone", ActiveSupport::TimeZone.us_zones, :default => "Pacific Time (US & Canada)") %> <br/>
       3. Choose messages and times
     </p>
-  </div>
-<div>
-  <!-- grid_12 -->
-  <div id="breakfastdiv">
+    </div> <!-- grid_12 -->
+    <div id="breakfastdiv" class="grid_4">
     <table>
-      <tr>
-        <td></td><br/>
-      <td></td>
-      </tr>
+	<tr>
+	<td>Message<%=text_field_tag "breakfast[message]" %></td>
+	<td>Time<%=text_field_tag "breakfast[time]" %></td>
+	</tr>
       <tr>
         <th>
           Select
@@ -39,9 +37,9 @@
         </tr>
       <% end %>
     </table>
-  </div> <!-- breakfast grid -->
-  <br/>
-  <div id="lunchdiv" >
+    </div> <!-- breakfast grid -->
+    <br/>
+    <div id="lunchdiv" class="grid_4">
     <table>
       <tr>
         <th>
@@ -65,9 +63,9 @@
         </tr>
       <% end %>
     </table>
-  </div> <!-- lunch grid -->
-  <br/>
-  <div id="snackdiv" >
+    </div> <!-- lunch grid -->
+    <br/>
+    <div id="snackdiv" class="grid_4">
     <table>
       <tr>
         <th>
@@ -79,7 +77,7 @@
         </th>
       </tr>
     </table>
-    <% for message in Message.find(:all, :conditions => ["category = ?",'Snack']) %>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Snack']) %>
       <table>
         <tr>
           <td>
@@ -91,36 +89,34 @@
         </tr>
       <% end %>
     </table>
-  </div>
-  <br/>
-    <div id="snackdiv">
-      <table class="hovertable">
+    <br/>
+    <table class="hovertable">
+      <tr>
+        <th>
+          Select
+        </th>
+        <th>
+          Dinner Message
+          <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Dinner @5 PM or Change'} %>
+        </th>
+      </tr>
+    </table>
+    <table>
+      <% for message in Message.find(:all, :conditions => ["category = ?",'Dinner']) %>
         <tr>
-          <th>
-            Select
-          </th>
-          <th>
-            Dinner Message
-            <%=f.select 'dinner_time' , Message::DINNER,{:prompt => 'Dinner @5 PM or Change'} %>
-          </th>
+          <td>
+            <%= check_box_tag 'messages[]',message.id %>
+          </td>
+          <td>
+            <%= message.msg_text %>
+          </td>
         </tr>
-      </table>
-      <table>
-        <% for message in Message.find(:all, :conditions => ["category = ?",'Dinner']) %>
-          <tr>
-            <td>
-              <%= check_box_tag 'messages[]',message.id %>
-            </td>
-            <td>
-              <%= message.msg_text %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+      <% end %>
+    </table>
     </div> <!-- snack and dinner grid -->
-    <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
-  </div>
-<% end %>
+      <%=submit_tag 'Get Started! - 10 days free, then $5/month', :class => "signup_button"%>
+    </div> 
+      <% end %>
 </div>
 
 
